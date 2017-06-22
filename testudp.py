@@ -10,9 +10,13 @@ print("\nWelcome to The Cathodians Data Diode\n\n\n?")
 
 def Main ():
     u_input = input("Do you wish to start a transfer?\n\n(1) YES\n\n(2) NO\n\n ")
-    if u_input == 1 :
+    while u_input == 1 :
+        
         f_input = raw_input("Please enter filename: ")
         os.system ("udp-sender --async --max-bitrate 10m --file "+f_input)
+        u_input = input("Do you wish to transfer another file?\n\n(1) YES\n\n(2) NO\n\n ")
+    print "Thank you for using The Cathodians Data Diode!"
+        
 
 
 Main()
