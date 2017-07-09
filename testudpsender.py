@@ -17,10 +17,10 @@ def Main ():
             break
         except:
             print("\n\nThat's not a valid option!")
-            u_input = int(input('Do you wish to start a transfer?\n\n(1) YES\n\n(2) NO\n\n'))
+            return Main()
 
     if u_input == 1:
-        f_input = raw_input("Please enter filename: ")
+        f_input = raw_input("\nPlease enter filename: ")
         os.system ("udp-sender --async --max-bitrate 10m --file "+f_input)
         return Main()
 
@@ -41,27 +41,6 @@ def Main ():
         sys.exit()
     else:
 	print("\n\nThat's not a valid option!")
-        u_input = int(input('Do you wish to start a transfer?\n\n(1) YES\n\n(2) NO\n\n'))
-
-
-       
-    while True:
-        try:
-            u_input = int(input('Do you wish to start a transfer?\n\n(1) YES\n\n(2) NO\n\n'))
-            break
-        except:
-            print("\n\nThat's not a valid option!")
-            u_input = int(input('Do you wish to start a transfer?\n\n(1) YES\n\n(2) NO\n\n'))
-    if u_input == 1:
-        f_input = raw_input("Please enter filename: ")
-        os.system ("udp-sender --async --max-bitrate 10m --file "+f_input)
-
-    elif u_input == 2:
-        print('Thank you for using The Cathodians Data Diode!')
-    else:
-	print("\n\nThat's not a valid option!")
-        u_input = int(input('Do you wish to start a transfer?\n\n(1) YES\n\n(2) NO\n\n'))
-
-
+        return Main()
 
 Main()
