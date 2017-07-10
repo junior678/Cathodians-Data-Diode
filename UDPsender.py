@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# -*- coding: utf-8 -*-
 
 import glob
 import os
@@ -10,7 +11,7 @@ print("\nWelcome to The Cathodians Data Diode\n\n")
 
 #This function receives input from the user and outputs it to the udpcast command
 
-def Main ():
+def Main():
     while True:
         try:
             u_input = int(input('Do you wish to start a transfer?\n\n(1) YES\n\n(2) NO\n\n'))
@@ -21,7 +22,7 @@ def Main ():
 
     if u_input == 1:
         f_input = raw_input("\nPlease enter filename: ")
-        os.system ("udp-sender --async --max-bitrate 10m --file "+f_input)
+        os.system ("udp-sender --async --max-bitrate 10m --fec 8x8 --file "+f_input)
         return Main()
 
     elif u_input == 2:
@@ -42,5 +43,4 @@ def Main ():
     else:
 	print("\n\nThat's not a valid option!")
         return Main()
-
 Main()
