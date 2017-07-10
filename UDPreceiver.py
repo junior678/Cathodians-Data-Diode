@@ -72,5 +72,3 @@ def HeartBeat():
 if True:
     Process(target=Main).start()
     Process(target=HeartBeat).start()
-
-HeartBeat()
